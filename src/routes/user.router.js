@@ -36,7 +36,7 @@ router.route("/register").post(
     router.route("/update-User-Detail").post(verifyJwt,updateAccountDetail);
 
     router.route('/update-avatar').patch(verifyJwt,upload.single("avatar"),updateUserAvatar);
-    router.route('/update-coverImage').patch(verifyJwt.upload.single("coverImage"),updateUserCoverImage);
+    router.route('/update-coverImage').patch(verifyJwt,upload.single("coverImage"),updateUserCoverImage);
     router.route("/c/:username").get(verifyJwt,getUserChannelProfile);
     router.route('/history').get(verifyJwt,getWatchHistory);
 
